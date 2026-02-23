@@ -25,7 +25,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 // Start the JAR application
-                sh 'java -jar target/mavenlistapp-1.0-SNAPSHOT.jar'
+                sh 'timeout 10s java -jar target/mavenlistapp-1.0-SNAPSHOT-jar-with-dependencies.jar || true'
             }
         }
 
